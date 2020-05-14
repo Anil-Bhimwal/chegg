@@ -1,0 +1,15 @@
+clc;
+clear all;
+x1= -3:0.01:3;
+y1= power(x1, 2);
+x2= -20: 0.1:40;
+y2= 2*x2;
+polar(x1, y1);
+title('x1 vs y1');
+hist(x2, y2);
+title('x2 vs y2');
+d= sqrt(power((x2-x1),2)+ power((y2-y1),2));
+[X, Y]=meshgrid(x2-x1, y2-y1);
+Z=meshgrid(d);
+surf(Z,X,Y);
+title('The figure of d vs (x2-x1) vs (y2-y1)');
